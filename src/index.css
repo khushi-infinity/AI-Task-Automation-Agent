@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply transition-colors duration-200;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-cyber-darker text-white font-sans;
+  overflow-x: hidden;
+}
+
+/* Terminal-style text */
+.terminal-text {
+  @apply font-mono text-sm tracking-wide;
+}
+
+/* Glowing borders */
+.glow-border-green {
+  @apply border border-cyber-accent shadow-glow-green;
+}
+
+.glow-border-purple {
+  @apply border border-cyber-purple shadow-glow-purple;
+}
+
+.glow-border-blue {
+  @apply border border-cyber-blue shadow-glow-blue;
+}
+
+/* Neon button */
+.neon-btn {
+  @apply px-4 py-2 rounded font-mono font-semibold text-sm uppercase tracking-wider transition-all duration-300 cursor-pointer;
+  @apply bg-cyber-accent text-cyber-darker;
+  @apply hover:shadow-glow-green hover:scale-105;
+  @apply active:scale-95;
+}
+
+.neon-btn-secondary {
+  @apply px-4 py-2 rounded font-mono font-semibold text-sm uppercase tracking-wider transition-all duration-300 cursor-pointer;
+  @apply border-2 border-cyber-purple text-cyber-purple;
+  @apply hover:bg-cyber-purple hover:text-white;
+  @apply active:scale-95;
+}
+
+/* Input field */
+.cyber-input {
+  @apply w-full px-4 py-3 rounded bg-cyber-dark border-2 border-cyber-accent;
+  @apply text-white font-mono text-sm;
+  @apply focus:outline-none focus:shadow-glow-green;
+  @apply placeholder-gray-500;
+}
+
+.cyber-input-secondary {
+  @apply w-full px-4 py-3 rounded bg-cyber-dark border-2 border-cyber-purple;
+  @apply text-white font-mono text-sm;
+  @apply focus:outline-none focus:shadow-glow-purple;
+  @apply placeholder-gray-500;
+}
+
+/* Loading animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Typewriter animation */
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.typewriter {
+  animation: typewriter 0.5s steps(60, end);
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid var(--cursor-color, #00ff88);
+}
+
+/* Scroll bar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(10, 14, 39, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ff88;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00dd77;
+}
